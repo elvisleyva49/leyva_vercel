@@ -5,20 +5,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora de Notas Universitarias</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Tu archivo CSS personalizado -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
-    <h1>Calculadora de Notas Universitarias</h1>
-    <form action="/calculate" method="post">
-        <label for="grade1">Nota 1:</label>
-        <input type="number" id="grade1" name="grade1" required><br><br>
-        
-        <label for="grade2">Nota 2:</label>
-        <input type="number" id="grade2" name="grade2" required><br><br>
-        
-        <label for="grade3">Nota 3:</label>
-        <input type="number" id="grade3" name="grade3" required><br><br>
-        
-        <button type="submit">Calcular</button>
-    </form>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Calculadora de Notas Universitarias</h1>
+        <form action="/calculate" method="post" id="gradeForm">
+            <!-- Nota 1 -->
+            <div class="row mb-3">
+                <div class="col-sm-6">
+                    <label for="grade1" class="form-label">Nota 1:</label>
+                    <input type="number" class="form-control" id="grade1" name="grade1" required>
+                </div>
+                <div class="col-sm-6">
+                    <label for="weight1" class="form-label">Peso (%):</label>
+                    <input type="number" class="form-control" id="weight1" name="weight1" required>
+                </div>
+            </div>
+
+            <!-- Nota 2 -->
+            <div class="row mb-3">
+                <div class="col-sm-6">
+                    <label for="grade2" class="form-label">Nota 2:</label>
+                    <input type="number" class="form-control" id="grade2" name="grade2" required>
+                </div>
+                <div class="col-sm-6">
+                    <label for="weight2" class="form-label">Peso (%):</label>
+                    <input type="number" class="form-control" id="weight2" name="weight2" required>
+                </div>
+            </div>
+
+            <!-- Nota 3 -->
+            <div class="row mb-3">
+                <div class="col-sm-6">
+                    <label for="grade3" class="form-label">Nota 3:</label>
+                    <input type="number" class="form-control" id="grade3" name="grade3" required>
+                </div>
+                <div class="col-sm-6">
+                    <label for="weight3" class="form-label">Peso (%):</label>
+                    <input type="number" class="form-control" id="weight3" name="weight3" required>
+                </div>
+            </div>
+
+            <!-- Nota 4 -->
+            <div class="row mb-3">
+                <div class="col-sm-6">
+                    <label for="grade4" class="form-label">Nota 4:</label>
+                    <input type="number" class="form-control" id="grade4" name="grade4" required>
+                </div>
+                <div class="col-sm-6">
+                    <label for="weight4" class="form-label">Peso (%):</label>
+                    <input type="number" class="form-control" id="weight4" name="weight4" required>
+                </div>
+            </div>
+
+            <!-- Botón para calcular -->
+            <div class="row mb-3">
+                <div class="col-sm-12 text-center">
+                    <button type="submit" class="btn btn-primary">Calcular</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS al final para mejor rendimiento -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
